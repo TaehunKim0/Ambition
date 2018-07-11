@@ -33,10 +33,15 @@ void Application::Release()
 	Renderer::GetInst()->Release();
 }
 
+#include"Main.h"
 void Application::Run()
 {
 	MSG msg;
 	ZeroMemory(&msg, sizeof(msg));
+
+	Main* main = new Main();
+	main->Init();
+	SceneDirector::GetInst()->ChangeScene(main);
 
 	while (msg.message != WM_QUIT)
 	{
@@ -48,8 +53,8 @@ void Application::Run()
 		else
 		{
 			Renderer::GetInst()->Begin();
-
-
+			SceneDirector::GetInst()->Update(60.f);
+			SceneDirector::GetInst()->Render();
 			Renderer::GetInst()->End();
 		}
 

@@ -23,3 +23,4 @@ using namespace std;
 #include"Texture.h"
 #include"Sprite.h"
 #include"TextureMgr.h"
+#include"SceneDirector.h"

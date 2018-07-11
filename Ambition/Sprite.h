@@ -14,8 +14,8 @@ public:
 	static Sprite* Create(wstring fileName);
 	
 public:
-	void Update(float deltaTime) override;
-	void Render() override;
+	void Update(float deltaTime);
+	void Render();
 
 };
 
