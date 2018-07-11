@@ -42,4 +42,14 @@ void Sprite::Update(float deltaTime)
 void Sprite::Render()
 {
 	GameObject::Render();
+
+	auto sprite = Renderer::GetInst()->m_Sprite;
+
+	RECT rect;
+	SetRect(&rect, 0, 0, m_vSize.x, m_vSize.y);
+
+	sprite->Begin(D3DXSPRITE_ALPHABLEND);
+	sprite->SetTransform(&GetMatrix());
+	sprite->Draw(m_Texture->m_pTexture, &rect , NULL, NULL, D3DCOLOR_ARGB(255, 255, 255, 255));
+	sprite->End();
 }

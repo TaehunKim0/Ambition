@@ -21,9 +21,23 @@
     <ClCompile Include="TextureMgr.cpp">
       <Filter>Frame</Filter>
     </ClCompile>
+    <ClCompile Include="SceneDirector.cpp">
+      <Filter>Frame</Filter>
+    </ClCompile>
+    <ClCompile Include="Intro.cpp">
+      <Filter>The Fighting\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>The Fighting\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="InDoorStadium.cpp">
+      <Filter>The Fighting\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="OutDoorStadium.cpp">
+      <Filter>The Fighting\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Singleton.h" />
     <ClInclude Include="Application.h">
       <Filter>Frame</Filter>
     </ClInclude>
@@ -43,6 +57,24 @@
     <ClInclude Include="TextureMgr.h">
       <Filter>Frame</Filter>
     </ClInclude>
+    <ClInclude Include="SceneDirector.h">
+      <Filter>Frame</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Frame</Filter>
+    </ClInclude>
+    <ClInclude Include="Intro.h">
+      <Filter>The Fighting\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Main.h">
+      <Filter>The Fighting\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="InDoorStadium.h">
+      <Filter>The Fighting\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="OutDoorStadium.h">
+      <Filter>The Fighting\Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Frame">
@@ -50,6 +82,12 @@
     </Filter>
     <Filter Include="Node">
       <UniqueIdentifier>{ee156714-476c-45e6-9111-620d572a1b90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="The Fighting">
+      <UniqueIdentifier>{96cf82ea-0158-4da6-97b9-a524951af243}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="The Fighting\Scene">
+      <UniqueIdentifier>{fb881c82-85d0-427d-a2b5-6e14c528320c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
