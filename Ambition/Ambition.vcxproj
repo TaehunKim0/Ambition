@@ -130,17 +130,25 @@
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Entry.cpp" />
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="TextureMgr.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="GameObject.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Singleton.h" />
+    <ClInclude Include="Sprite.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="TextureMgr.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -2,6 +2,9 @@
 
 using namespace std;
 
+#define SAFE_DELETE(x) if(x) {delete x; x = nullptr;} 
+
+
 #include<Windows.h>
 #include<stdio.h>
 #include<d3d9.h>
@@ -9,8 +12,14 @@ using namespace std;
 #include<iostream>
 #include<string>
 #include<time.h>
+#include<map>
 //
 
 #include"Singleton.h"
 #include"Application.h"
 #include"Renderer.h"
+
+#include"GameObject.h"
+#include"Texture.h"
+#include"Sprite.h"
+#include"TextureMgr.h"

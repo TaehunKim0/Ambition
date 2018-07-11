@@ -2,16 +2,27 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="Entry.cpp" />
-    <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="Application.cpp">
       <Filter>Frame</Filter>
     </ClCompile>
     <ClCompile Include="Renderer.cpp">
       <Filter>Frame</Filter>
     </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Node</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Node</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Node</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureMgr.cpp">
+      <Filter>Frame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="Application.h">
       <Filter>Frame</Filter>
@@ -19,10 +30,26 @@
     <ClInclude Include="Renderer.h">
       <Filter>Frame</Filter>
     </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Node</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Sprite.h">
+      <Filter>Node</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Node</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureMgr.h">
+      <Filter>Frame</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Frame">
       <UniqueIdentifier>{f81cf29a-5143-4f03-8659-4febd8b349ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Node">
+      <UniqueIdentifier>{ee156714-476c-45e6-9111-620d572a1b90}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
