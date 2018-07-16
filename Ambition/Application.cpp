@@ -13,6 +13,10 @@ Application::~Application()
 
 bool Application::Init(wstring title, int width, int height, bool windowMode)
 {
+	AllocConsole();
+	FILE* stream;
+	freopen_s(&stream, "CONOUT$", "wt", stdout);
+
 	m_Title = title;
 	m_iWidth = width;
 	m_iHeight = height;
@@ -31,6 +35,7 @@ bool Application::Init(wstring title, int width, int height, bool windowMode)
 void Application::Release()
 {
 	Renderer::GetInst()->Release();
+	FreeConsole();
 }
 
 #include"Main.h"
@@ -104,6 +109,8 @@ LRESULT Application::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 	case WM_DESTROY:
 		PostQuitMessage(0);
 		break;
+
+
 	}
 
 	return DefWindowProc(hWnd, Msg, wParam, lParam);

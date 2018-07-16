@@ -36,6 +36,15 @@
     <ClCompile Include="OutDoorStadium.cpp">
       <Filter>The Fighting\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>The Fighting\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="FightObject.cpp">
+      <Filter>The Fighting\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="FightMgr.cpp">
+      <Filter>The Fighting\Mgr</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -75,6 +84,15 @@
     <ClInclude Include="OutDoorStadium.h">
       <Filter>The Fighting\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>The Fighting\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="FightObject.h">
+      <Filter>The Fighting\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="FightMgr.h">
+      <Filter>The Fighting\Mgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Frame">
@@ -88,6 +106,12 @@
     </Filter>
     <Filter Include="The Fighting\Scene">
       <UniqueIdentifier>{fb881c82-85d0-427d-a2b5-6e14c528320c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="The Fighting\Object">
+      <UniqueIdentifier>{18db1b5d-1f77-4614-9e48-ded10139328f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="The Fighting\Mgr">
+      <UniqueIdentifier>{06d44342-2669-4c88-bd4a-ebe7c99d61f9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

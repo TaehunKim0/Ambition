@@ -130,11 +130,14 @@
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Entry.cpp" />
+    <ClCompile Include="FightMgr.cpp" />
+    <ClCompile Include="FightObject.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="InDoorStadium.cpp" />
     <ClCompile Include="Intro.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="OutDoorStadium.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="SceneDirector.cpp" />
     <ClCompile Include="Sprite.cpp" />
@@ -147,11 +150,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="FightMgr.h" />
+    <ClInclude Include="FightObject.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="InDoorStadium.h" />
     <ClInclude Include="Intro.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="OutDoorStadium.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="SceneDirector.h" />
     <ClInclude Include="Singleton.h" />
