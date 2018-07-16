@@ -45,6 +45,12 @@
     <ClCompile Include="FightMgr.cpp">
       <Filter>The Fighting\Mgr</Filter>
     </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>Node</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Node</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -92,6 +98,12 @@
     </ClInclude>
     <ClInclude Include="FightMgr.h">
       <Filter>The Fighting\Mgr</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>Node</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Node</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

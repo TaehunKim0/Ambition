@@ -24,6 +24,26 @@ void FightObject::Render()
 
 }
 
+void FightObject::Punch()
+{
+}
+
+void FightObject::Kick()
+{
+}
+
+void FightObject::Sit()
+{
+}
+
+void FightObject::Block()
+{
+}
+
+void FightObject::Jump()
+{
+}
+
 void FightObject::Move()
 {
 }

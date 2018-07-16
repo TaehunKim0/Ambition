@@ -77,6 +77,10 @@
     <IncludePath>$(DXSDK_DIR)\Include;$(IncludePath)</IncludePath>
     <LibraryPath>$(DXSDK_DIR)\Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -128,12 +132,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Entry.cpp" />
     <ClCompile Include="FightMgr.cpp" />
     <ClCompile Include="FightObject.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="InDoorStadium.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="Intro.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="OutDoorStadium.cpp" />
@@ -149,11 +155,13 @@
     <ClCompile Include="TextureMgr.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animation.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="FightMgr.h" />
     <ClInclude Include="FightObject.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="InDoorStadium.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="Intro.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="OutDoorStadium.h" />

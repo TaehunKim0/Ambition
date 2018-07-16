@@ -13,6 +13,7 @@ using namespace std;
 #include<string>
 #include<time.h>
 #include<map>
+#include<vector>
 //
 
 #include"Singleton.h"
@@ -24,3 +25,7 @@ using namespace std;
 #include"Sprite.h"
 #include"TextureMgr.h"
 #include"SceneDirector.h"
+#include"Animation.h"
+#include"FightObject.h"
+#include"FightMgr.h"
+#include"Player.h"

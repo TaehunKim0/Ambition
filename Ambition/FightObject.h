@@ -14,9 +14,7 @@ class FightObject : public GameObject
 {
 public:
 	State m_State;
-
 	bool m_bCanMove;
-
 
 public:
 	FightObject();
