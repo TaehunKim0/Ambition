@@ -23,6 +23,8 @@ void SceneDirector::ChangeScene(GameObject * scene)
 
 void SceneDirector::Update(float deltaTime)
 {
+	InputSystem->Update();
+
 	if (m_CurrentScene)
 		m_CurrentScene->Update(deltaTime);
 }

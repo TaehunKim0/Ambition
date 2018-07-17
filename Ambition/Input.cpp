@@ -59,3 +59,8 @@ KeyState Input::GetKey(int key)
 
 	return KeyState::NONE;
 }
+
+bool Input::IsKeyInput()
+{
+	return false;
+}

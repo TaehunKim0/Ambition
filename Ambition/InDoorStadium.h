@@ -5,6 +5,7 @@ class InDoorStadium : public GameObject
 {
 public:
 	Player* player;
+	Sprite* BackGround;
 
 public:
 	InDoorStadium();

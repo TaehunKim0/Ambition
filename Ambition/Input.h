@@ -34,4 +34,5 @@ private:
 
 public:
 	KeyState GetKey(int key);
+	bool IsKeyInput();
 };

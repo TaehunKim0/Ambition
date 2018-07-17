@@ -43,8 +43,25 @@ D3DXMATRIX GameObject::GetMatrix()
 	return m;
 }
 
+void GameObject::SetParent(GameObject * parent)
+{
+	m_Parent = parent;
+}
+
 void GameObject::Translate(float x, float y)
 {
 	m_vPosition.x += x;
 	m_vPosition.y += y;
+}
+
+void GameObject::SetPosition(float x, float y)
+{
+	m_vPosition.x = x;
+	m_vPosition.y = y;
+}
+
+void GameObject::SetScale(float x, float y)
+{
+	m_vScale.x = x;
+	m_vScale.y = y;
 }

@@ -9,6 +9,7 @@ Animation::Animation()
 	, m_bPlay(1)
 	, m_bAutoPlay(0)
 	, m_bEndWithFrame(0)
+	, m_bFrameZero(1)
 {
 }
 
@@ -16,16 +17,18 @@ Animation::~Animation()
 {
 }
 
-void Animation::Init(bool autoplay, int delay)
+void Animation::Init(bool autoplay, int delay, GameObject* parent)
 {
 	m_bAutoPlay = autoplay;
 	m_iDelay = delay;
+	SetParent(parent);
 }
 
 void Animation::Set()
 {
 	m_bEnd = false;
-	m_bEndWithFrame = false;
+	m_iFrame = 0;
+	m_iCurrentFrame = 0;
 }
 
 void Animation::SetCurrentFrame(int frame)
@@ -43,9 +46,15 @@ void Animation::SetAnimEndWithFrame(bool end)
 	m_bEndWithFrame = end;
 }
 
+void Animation::SetFrameZeroIsEnd(bool end)
+{
+	m_bFrameZero = end;
+}
+
 void Animation::AddFrame(wstring fileName)
 {
 	auto sprite = Sprite::Create(fileName);
+	sprite->SetParent(this);
 
 	if (sprite)
 		m_Anim.push_back(sprite);
@@ -56,36 +65,58 @@ void Animation::AddFrame(wstring fileName)
 
 void Animation::AddContinueFrame(wstring fileName, int firstFrame, int lastFrame)
 {
-	for (int i = firstFrame; i <= lastFrame; i++)
+	if (firstFrame > lastFrame)
 	{
-		auto sprite = Sprite::Create(fileName.c_str() + to_wstring(i) + L".png");
+		for (int i = firstFrame; i >= lastFrame; i--)
+		{
+			auto sprite = Sprite::Create(fileName.c_str() + to_wstring(i) + L".png");
 
-		if(sprite)
-			m_Anim.push_back(sprite);
+			sprite->SetParent(this);
+			if (sprite)
+				m_Anim.push_back(sprite);
 
-		m_iLastFrame++;
+			m_iLastFrame++;
+		}
 	}
+	else
+	{
+		for (int i = firstFrame; i <= lastFrame; i++)
+		{
+			auto sprite = Sprite::Create(fileName.c_str() + to_wstring(i) + L".png");
+
+			sprite->SetParent(this);
+			if (sprite)
+				m_Anim.push_back(sprite);
+
+			m_iLastFrame++;
+		}
+	}
+
 }
 
 void Animation::Update(float deltaTime)
 {
-	m_iFrame++;
+	if(!m_bEnd)
+		m_iFrame++;
 
 	if (m_bAutoPlay)
 	{
-		if(m_bEndWithFrame)
-			if(!m_bEnd)
-				if (m_iFrame > m_iDelay)
-				{
-					m_iCurrentFrame++;
-					m_iFrame = 0;
-				}
+		if (m_iFrame > m_iDelay)
+		{
+			m_iCurrentFrame++;
+			m_iFrame = 0;
+		}
 	}
 
 	if (m_iCurrentFrame >= m_iLastFrame)
 	{
-		m_iCurrentFrame = 0;
-		m_bEnd = 1;
+		if (m_bFrameZero)
+			m_iCurrentFrame = 0;
+		else
+			m_iCurrentFrame--;
+
+		if(m_bEndWithFrame)
+			m_bEnd = 1;
 	}
 
 	m_Anim.at(m_iCurrentFrame)->Update(deltaTime);

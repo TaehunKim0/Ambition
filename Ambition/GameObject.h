@@ -28,6 +28,10 @@ public:
 
 	D3DXMATRIX GetMatrix();
 
+	void SetParent(GameObject* parent);
+
 public:
 	void Translate(float x, float y);
+	void SetPosition(float x, float y);
+	void SetScale(float x, float y);
 };

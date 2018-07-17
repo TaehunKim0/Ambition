@@ -61,6 +61,9 @@ void Application::Run()
 			SceneDirector::GetInst()->Update(60.f);
 			SceneDirector::GetInst()->Render();
 			Renderer::GetInst()->End();
+
+			if (InputSystem->GetKey(VK_ESCAPE) == KeyState::UP)
+				exit(0);
 		}
 
 	}

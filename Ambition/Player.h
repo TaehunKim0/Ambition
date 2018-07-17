@@ -2,7 +2,7 @@
 class Player : public FightObject
 {
 private:
-	
+
 
 public:
 	Player();
