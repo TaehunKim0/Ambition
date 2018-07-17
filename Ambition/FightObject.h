@@ -9,8 +9,6 @@ enum class State
 	SIT,
 	STAND
 };
-
-
 class FightObject : public GameObject
 {
 public:
