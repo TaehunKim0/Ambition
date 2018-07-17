@@ -2,7 +2,7 @@
 class Player : public FightObject
 {
 private:
-	Animation * m_Punch;
+	
 
 public:
 	Player();
@@ -11,5 +11,14 @@ public:
 public:
 	void Update(float deltaTime);
 	void Render();
+
+public:
+	virtual void Punch();
+	virtual void Kick();
+	virtual void Sit();
+	virtual void Block();
+	virtual void Jump();
+
+	void Move();
 };
 

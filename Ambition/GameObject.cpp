@@ -42,3 +42,9 @@ D3DXMATRIX GameObject::GetMatrix()
 
 	return m;
 }
+
+void GameObject::Translate(float x, float y)
+{
+	m_vPosition.x += x;
+	m_vPosition.y += y;
+}

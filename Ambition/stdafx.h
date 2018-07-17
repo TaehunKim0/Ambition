@@ -19,7 +19,7 @@ using namespace std;
 #include"Singleton.h"
 #include"Application.h"
 #include"Renderer.h"
-
+#include"Input.h"
 #include"GameObject.h"
 #include"Texture.h"
 #include"Sprite.h"

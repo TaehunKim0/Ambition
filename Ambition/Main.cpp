@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "Main.h"
-
+#include"InDoorStadium.h"
 
 Main::Main()
 {
@@ -19,6 +19,11 @@ void Main::Init()
 void Main::Update(float deltaTime)
 {
 	m_Sp1->Update(deltaTime);
+
+	if (GetAsyncKeyState(VK_SPACE))
+	{
+		SceneDirector::GetInst()->ChangeScene(new InDoorStadium());
+	}
 }
 
 void Main::Render()

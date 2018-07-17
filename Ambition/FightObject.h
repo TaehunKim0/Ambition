@@ -2,11 +2,12 @@
 
 enum class State
 {
-	ATTACK,
+	PUNCH,
 	BLOCK,
+	KICK,
 	JUMP,
 	SIT,
-	NONE
+	STAND
 };
 
 
@@ -15,6 +16,14 @@ class FightObject : public GameObject
 public:
 	State m_State;
 	bool m_bCanMove;
+
+public:
+	Animation * m_APunch;
+	Animation * m_AKick;
+	Animation * m_AJump;
+	Animation * m_ASit;
+	Animation * m_ABlock;
+	Animation * m_AStand;
 
 public:
 	FightObject();

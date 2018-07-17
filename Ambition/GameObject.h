@@ -28,4 +28,6 @@ public:
 
 	D3DXMATRIX GetMatrix();
 
+public:
+	void Translate(float x, float y);
 };
