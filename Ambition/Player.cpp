@@ -34,6 +34,15 @@ Player::Player()
 	m_ARight = new Animation();
 	m_ARight->Init(1, 8, this);
 	m_ARight->AddContinueFrame(L"Resource/Kyo/MoveLeft/", 1, 10);
+
+	m_AJump = new Animation();
+	m_AJump->Init(1, 5, this);
+	m_AJump->SetAnimEndWithFrame(1);
+	m_AJump->AddContinueFrame(L"Resource/Kyo/Jump/", 1, 7);
+
+	m_JumpPunch = new Animation();
+	
+
 }
 
 Player::~Player()
@@ -47,10 +56,6 @@ void Player::Update(float deltaTime)
 	switch (m_State)
 	{
 	case State::STAND:
-		if (InputSystem->GetKey('S') == KeyState::PRESS)
-		{
-			m_State = State::SIT;
-		}
 		break;
 
 	case State::SIT:
@@ -70,16 +75,20 @@ void Player::Update(float deltaTime)
 		break;
 	}
 
-	if (InputSystem->GetKey('H') == KeyState::UP)
-	{
-		m_State = State::PUNCH;
-		m_bPunched = true;
-	}
+	if(m_State != State::KICK && m_State != State::SIT)
+		if (InputSystem->GetKey('H') == KeyState::UP)
+		{
+			m_State = State::PUNCH;
+			m_bPunched = true;
+			m_bAttacked = true;
+		}
 
-	if (InputSystem->GetKey('G') == KeyState::UP)
-	{
-		m_State = State::KICK;
-	}
+	if (m_State != State::PUNCH && m_State != State::SIT)
+		if (InputSystem->GetKey('G') == KeyState::UP)
+		{
+			m_State = State::KICK;
+			m_bAttacked = true;
+		}
 
 	if (m_State != State::SIT && m_State != State::PUNCH && m_State != State::KICK) 
 		Move();
@@ -114,23 +123,38 @@ void Player::Jump()
 
 void Player::Move()
 {
-	if (InputSystem->GetKey('D') == KeyState::PRESS)
+	if(m_bAttacked == false && m_bJumped == false)
+		if (InputSystem->GetKey('S') == KeyState::PRESS)
+		{
+			m_State = State::SIT;
+		}
+	if (m_State != State::SIT)
 	{
-		Translate(5.f, 0.f);
-		m_State = State::MOVE;
-		m_Direction = Direction::RIGHT;
-	}
-	if (InputSystem->GetKey('A') == KeyState::PRESS)
-	{
-		Translate(-5.f, 0.f);
-		m_State = State::MOVE;
-		m_Direction = Direction::LEFT;
-	}
-	if (InputSystem->GetKey('W') == KeyState::PRESS)
-	{
-		
+		if (InputSystem->GetKey('D') == KeyState::PRESS)
+		{
+			Translate(5.f, 0.f);
+			if (m_State != State::JUMP)
+			{
+				m_State = State::MOVE;
+				m_Direction = Direction::RIGHT;
+			}
+		}
+		if (InputSystem->GetKey('A') == KeyState::PRESS)
+		{
+			Translate(-5.f, 0.f);
+			if (m_State != State::JUMP)
+			{
+				m_State = State::MOVE;
+				m_Direction = Direction::LEFT;
+			}
+		}
+
 	}
 
-
-
+	if(m_bAttacked == false && m_bJumped == false)
+		if (InputSystem->GetKey('W') == KeyState::PRESS)
+		{
+			m_State = State::JUMP;
+			m_bJumped = true;
+		}
 }

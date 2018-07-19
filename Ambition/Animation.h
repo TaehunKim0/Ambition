@@ -11,6 +11,7 @@ private:
 
 public:
 	bool m_bEnd;
+	bool m_bAnimMiddle;
 	bool m_bAutoPlay;
 	bool m_bEndWithFrame;
 	bool m_bFrameZero;

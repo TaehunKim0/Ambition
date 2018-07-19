@@ -39,20 +39,31 @@ public:
 
 	bool m_bCanMove;
 	int m_iAttackDelay;
-
+	
+	float m_fJump_Accel;
+	float m_fJumpSpeed;
 public:
 	bool m_bPunched;
+	bool m_bJumped;
 
+	bool m_bAttacked;
+
+public:
+	Animation * m_AJump;
+	Animation * m_ASit;
+public:
+	Animation * m_ABlock;
+	Animation * m_AStand;
+public:
+	Animation * m_ALeft;
+	Animation * m_ARight;
+	
 public:
 	Animation * m_APunch;
 	Animation * m_AKick;
-	Animation * m_AJump;
-	Animation * m_ASit;
-	Animation * m_ABlock;
-	Animation * m_AStand;
 
-	Animation * m_ALeft;
-	Animation * m_ARight;
+	Animation* m_JumpPunch;
+	Animation* m_KickPunch;
 
 public:
 	FightObject();

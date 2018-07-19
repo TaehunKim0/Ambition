@@ -6,7 +6,7 @@ class InDoorStadium : public GameObject
 public:
 	Player* player;
 	Sprite* BackGround;
-
+	Sprite* Life;
 public:
 	InDoorStadium();
 	~InDoorStadium();
@@ -14,4 +14,3 @@ public:
 	void Update(float deltaTime);
 	void Render();
 };
-

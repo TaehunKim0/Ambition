@@ -10,6 +10,7 @@ Animation::Animation()
 	, m_bAutoPlay(0)
 	, m_bEndWithFrame(0)
 	, m_bFrameZero(1)
+	, m_bAnimMiddle(0)
 {
 }
 
@@ -27,6 +28,7 @@ void Animation::Init(bool autoplay, int delay, GameObject* parent)
 void Animation::Set()
 {
 	m_bEnd = false;
+	m_bAnimMiddle = false;
 	m_iFrame = 0;
 	m_iCurrentFrame = 0;
 }
@@ -108,6 +110,9 @@ void Animation::Update(float deltaTime)
 		}
 	}
 
+	if (m_iLastFrame / 2 == m_iCurrentFrame)
+		m_bAnimMiddle = true;
+
 	if (m_iCurrentFrame >= m_iLastFrame)
 	{
 		if (m_bFrameZero)
@@ -118,6 +123,8 @@ void Animation::Update(float deltaTime)
 		if(m_bEndWithFrame)
 			m_bEnd = 1;
 	}
+
+	
 
 	m_Anim.at(m_iCurrentFrame)->Update(deltaTime);
 }

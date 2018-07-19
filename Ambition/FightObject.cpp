@@ -8,6 +8,10 @@ FightObject::FightObject() :
 	, m_iAttackDelay(0)
 	, m_Direction(Direction::NONE)
 	, m_bPunched(0)
+	, m_bJumped(0)
+	, m_fJump_Accel(1.f)
+	, m_fJumpSpeed(15.f)
+	, m_bAttacked(0)
 {
 }
 
@@ -42,6 +46,7 @@ void FightObject::Update(float deltaTime)
 			m_APunch->m_bEnd = 0;
 			m_State = State::STAND;
 			m_bPunched = false;
+			m_bAttacked = false;
 		}
 
 		break;
@@ -54,12 +59,37 @@ void FightObject::Update(float deltaTime)
 		{
 			m_AKick->m_bEnd = 0;
 			m_State = State::STAND;
+			m_bAttacked = false;
 		}
 		break;
 
 	case State::JUMP:
 		if (m_AJump)
 			m_AJump->Update(deltaTime);
+
+		if (m_AJump->m_bAnimMiddle == false)
+		{
+			//m_fJumpSpeed += m_fJump_Accel;
+			m_vPosition.y -= m_fJumpSpeed;
+		}
+
+		else
+		{
+			if (m_AJump->m_bEnd == false)
+				m_vPosition.y += m_fJumpSpeed;
+			else
+				printf("aa");
+		}
+
+		if (m_AJump->m_bEnd)
+		{
+			m_AJump->m_bEnd = 0;
+			m_State = State::STAND;
+			m_bJumped = false;
+			m_AJump->Set();
+		}
+
+
 		break;
 		
 	case State::SIT:
