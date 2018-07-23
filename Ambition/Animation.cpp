@@ -11,6 +11,7 @@ Animation::Animation()
 	, m_bEndWithFrame(0)
 	, m_bFrameZero(1)
 	, m_bAnimMiddle(0)
+	, m_iMiddleFrame(0)
 {
 }
 
@@ -109,6 +110,7 @@ void Animation::Update(float deltaTime)
 			m_iFrame = 0;
 		}
 	}
+	m_iMiddleFrame = m_iLastFrame / 2;
 
 	if (m_iLastFrame / 2 == m_iCurrentFrame)
 		m_bAnimMiddle = true;

@@ -12,9 +12,9 @@ FightObject::FightObject() :
 	, m_fJump_Accel(1.f)
 	, m_fJumpSpeed(15.f)
 	, m_bAttacked(0)
+	, m_bJumpPunched(0)
 {
 }
-
 
 FightObject::~FightObject()
 {
@@ -47,6 +47,24 @@ void FightObject::Update(float deltaTime)
 			m_State = State::STAND;
 			m_bPunched = false;
 			m_bAttacked = false;
+			m_bJumpPunched = false;
+		}
+
+		break;
+
+	case State::JUMP_PUNCH:
+		m_bJumpPunched = true;
+
+		if (m_AJumpPunch)
+			m_AJumpPunch->Update(deltaTime);
+
+		if (m_AJumpPunch->m_bEnd)
+		{
+			m_State = State::JUMP;
+			m_bAttacked = false;
+			m_AJumpPunch->Set();
+			m_AJump->SetCurrentFrame(m_AJump->m_iMiddleFrame);
+			m_AJump->m_bAnimMiddle = true;
 		}
 
 		break;
@@ -61,6 +79,23 @@ void FightObject::Update(float deltaTime)
 			m_State = State::STAND;
 			m_bAttacked = false;
 		}
+		break;
+
+	case State::JUMP_KICK:
+		m_bJumpKicked = true;
+
+		if (m_AJumpKick)
+			m_AJumpKick->Update(deltaTime);
+
+		if (m_AJumpKick->m_bEnd)
+		{
+			m_State = State::JUMP;
+			m_bAttacked = false;
+			m_AJumpKick->Set();
+			m_AJump->SetCurrentFrame(m_AJump->m_iMiddleFrame);
+			m_AJump->m_bAnimMiddle = true;
+		}
+
 		break;
 
 	case State::JUMP:
@@ -88,7 +123,6 @@ void FightObject::Update(float deltaTime)
 			m_bJumped = false;
 			m_AJump->Set();
 		}
-
 
 		break;
 		
@@ -135,9 +169,20 @@ void FightObject::Render()
 			m_APunch->Render();
 		break;
 
+	case State::JUMP_PUNCH:
+		if (m_AJumpPunch)
+			m_AJumpPunch->Render();
+
+		break;
+
 	case State::KICK:
 		if (m_AKick)
 			m_AKick->Render();
+		break;
+
+	case State::JUMP_KICK:
+		if (m_AJumpKick)
+			m_AJumpKick->Render();
 		break;
 
 	case State::JUMP:

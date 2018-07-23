@@ -40,9 +40,10 @@ Player::Player()
 	m_AJump->SetAnimEndWithFrame(1);
 	m_AJump->AddContinueFrame(L"Resource/Kyo/Jump/", 1, 7);
 
-	m_JumpPunch = new Animation();
-	
-
+	m_AJumpPunch = new Animation();
+	m_AJumpPunch->Init(1, 2, this);
+	m_AJumpPunch->SetAnimEndWithFrame(1);
+	m_AJumpPunch->AddContinueFrame(L"Resource/Kyo/JumpPunch/", 4, 10);
 }
 
 Player::~Player()
@@ -52,6 +53,11 @@ Player::~Player()
 void Player::Update(float deltaTime)
 {
 	FightObject::Update(deltaTime);
+
+	bool isSit = (m_State == State::SIT);
+	bool isPunch = (m_State == State::PUNCH);
+	bool isKick = (m_State == State::KICK);
+
 
 	switch (m_State)
 	{
@@ -75,22 +81,37 @@ void Player::Update(float deltaTime)
 		break;
 	}
 
-	if(m_State != State::KICK && m_State != State::SIT)
+	if(!isKick && !isSit && m_State != State::JUMP_PUNCH)
 		if (InputSystem->GetKey('H') == KeyState::UP)
 		{
-			m_State = State::PUNCH;
+			if (m_State == State::JUMP)
+			{
+				if(m_bJumpPunched == false)
+					m_State = State::JUMP_PUNCH;
+			}
+			else
+				m_State = State::PUNCH;
+
 			m_bPunched = true;
 			m_bAttacked = true;
 		}
-
-	if (m_State != State::PUNCH && m_State != State::SIT)
+	
+	if (!isPunch && !isSit && m_State != State::JUMP_KICK)
 		if (InputSystem->GetKey('G') == KeyState::UP)
 		{
+			if (m_State == State::JUMP)
+			{
+				if (m_bJumpKicked == false)
+					m_State = State::JUMP_KICK;
+			}
+			else
+				m_State = State::KICK;
+
 			m_State = State::KICK;
 			m_bAttacked = true;
 		}
 
-	if (m_State != State::SIT && m_State != State::PUNCH && m_State != State::KICK) 
+	if (!isSit && !isPunch && !isKick) 
 		Move();
 
 }
@@ -123,17 +144,22 @@ void Player::Jump()
 
 void Player::Move()
 {
+	bool isSit = (m_State == State::SIT);
+	bool isPunch = (m_State == State::PUNCH);
+	bool isKick = (m_State == State::KICK);
+
 	if(m_bAttacked == false && m_bJumped == false)
 		if (InputSystem->GetKey('S') == KeyState::PRESS)
 		{
 			m_State = State::SIT;
 		}
-	if (m_State != State::SIT)
+
+	if (!isSit && m_State != State::PUNCH && m_State != State::KICK)
 	{
 		if (InputSystem->GetKey('D') == KeyState::PRESS)
 		{
 			Translate(5.f, 0.f);
-			if (m_State != State::JUMP)
+			if (m_State != State::JUMP && m_State != State::JUMP_PUNCH)
 			{
 				m_State = State::MOVE;
 				m_Direction = Direction::RIGHT;
@@ -142,7 +168,7 @@ void Player::Move()
 		if (InputSystem->GetKey('A') == KeyState::PRESS)
 		{
 			Translate(-5.f, 0.f);
-			if (m_State != State::JUMP)
+			if (m_State != State::JUMP && m_State != State::JUMP_PUNCH)
 			{
 				m_State = State::MOVE;
 				m_Direction = Direction::LEFT;

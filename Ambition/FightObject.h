@@ -7,6 +7,8 @@ enum class State
 	BLOCK,
 	KICK,
 	JUMP,
+	JUMP_PUNCH,
+	JUMP_KICK,
 	SIT,
 	STAND
 };
@@ -47,6 +49,8 @@ public:
 	bool m_bJumped;
 
 	bool m_bAttacked;
+	bool m_bJumpPunched;
+	bool m_bJumpKicked;
 
 public:
 	Animation * m_AJump;
@@ -62,8 +66,8 @@ public:
 	Animation * m_APunch;
 	Animation * m_AKick;
 
-	Animation* m_JumpPunch;
-	Animation* m_KickPunch;
+	Animation* m_AJumpPunch;
+	Animation* m_AJumpKick;
 
 public:
 	FightObject();

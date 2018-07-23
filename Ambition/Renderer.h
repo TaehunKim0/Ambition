@@ -6,7 +6,7 @@ public:
 	LPDIRECT3DDEVICE9 m_D3DDevice;
 	LPD3DXSPRITE m_Sprite;
 
-
+	
 
 public:
 	Renderer();
