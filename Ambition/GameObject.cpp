@@ -13,6 +13,7 @@ GameObject::GameObject()
 	, m_vSize(0.f,0.f)
 {
 	D3DXMatrixIdentity(&m_mMatrix);
+	SetRect(&m_CollisionRect, 0, 0, 0, 0);
 }
 
 

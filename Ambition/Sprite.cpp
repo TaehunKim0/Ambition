@@ -18,6 +18,7 @@ bool Sprite::Init(wstring fileName)
 		return false;
 
 	m_vSize = m_Texture->m_vSize;
+	SetRect(&m_CollisionRect, m_vPosition.x, m_vPosition.y, m_vPosition.x + m_vSize.x, m_vPosition.y + m_vSize.y);
 
 	return true;
 }
@@ -37,6 +38,7 @@ Sprite * Sprite::Create(wstring fileName)
 void Sprite::Update(float deltaTime)
 {
 	GameObject::Update(deltaTime);
+	SetRect(&m_CollisionRect, m_vPosition.x, m_vPosition.y, m_vPosition.x + m_vSize.x, m_vPosition.y + m_vSize.y);
 }
 
 void Sprite::Render()
@@ -47,6 +49,7 @@ void Sprite::Render()
 
 	RECT rect;
 	SetRect(&rect, 0, 0, m_vSize.x, m_vSize.y);
+	
 
 	sprite->Begin(D3DXSPRITE_ALPHABLEND);
 	sprite->SetTransform(&GetMatrix());

@@ -35,4 +35,8 @@ private:
 public:
 	KeyState GetKey(int key);
 	bool IsKeyInput();
+
+	D3DXVECTOR2 GetMousePos() {
+		return m_vMousePos;
+	}
 };

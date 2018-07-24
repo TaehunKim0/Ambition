@@ -14,6 +14,9 @@ using namespace std;
 #include<time.h>
 #include<map>
 #include<vector>
+#include<list>
+#include<queue>
+#include<conio.h>
 //
 
 #include"Singleton.h"
@@ -21,11 +24,17 @@ using namespace std;
 #include"Renderer.h"
 #include"Input.h"
 #include"GameObject.h"
+#include"ObjectManager.h"
 #include"Texture.h"
 #include"Sprite.h"
+#include"CollisionMgr.h"
 #include"TextureMgr.h"
 #include"SceneDirector.h"
 #include"Animation.h"
+#include"Controller.h"
+#include"PlayerController.h"
+#include"AIController.h"
+#include"Fighter.h"
 #include"FightObject.h"
 #include"FightMgr.h"
 #include"Player.h"

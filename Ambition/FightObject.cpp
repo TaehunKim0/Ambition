@@ -229,7 +229,6 @@ void FightObject::Jump()
 
 void FightObject::SetKey(int attack, int kick, int jump, int sit, int block)
 {
-	
 }
 
 void FightObject::Move()
