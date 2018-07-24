@@ -7,6 +7,7 @@ public:
 	D3DXVECTOR2 m_vScale;
 	D3DXVECTOR2 m_vSize;
 
+	RECT m_CollisionRect;
 
 	float m_fRotation;
 
@@ -14,7 +15,7 @@ public:
 
 	bool m_bVisible;
 	bool m_bUsePm;
-
+	bool IsDestroyed;
 public:
 	GameObject * m_Parent;
 

@@ -2,7 +2,11 @@
 class Main : public GameObject
 {
 public:
-	Sprite * m_Sp1;
+	Sprite * m_BackGround;
+	Sprite * m_FightButton;
+
+	std::queue<char> Buf;
+
 
 public:
 	Main();

@@ -27,10 +27,15 @@ void SceneDirector::Update(float deltaTime)
 
 	if (m_CurrentScene)
 		m_CurrentScene->Update(deltaTime);
+
+	ObjectManager::GetInst()->Update(deltaTime);
+
 }
 
 void SceneDirector::Render()
 {
 	if (m_CurrentScene)
 		m_CurrentScene->Render();
+
+	ObjectManager::GetInst()->Render();
 }

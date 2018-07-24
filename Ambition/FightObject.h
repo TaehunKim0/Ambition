@@ -1,49 +1,17 @@
 #pragma once
 
-enum class State
-{
-	MOVE,
-	PUNCH,
-	BLOCK,
-	KICK,
-	JUMP,
-	JUMP_PUNCH,
-	JUMP_KICK,
-	SIT,
-	STAND
-};
-
-enum class Direction
-{
-	LEFT,
-	RIGHT,
-	NONE
-};
-
-enum Key
-{
-	MOVELEFT,
-	MOVERIGHT,
-	PUNCH,
-	BLOCK,
-	KICK,
-	JUMP,
-	SIT,
-	STAND
-};
-
 class FightObject : public GameObject
 {
 public:
 	State m_State;
 	Direction m_Direction;
-	Key m_Key;
 
 	bool m_bCanMove;
 	int m_iAttackDelay;
 	
 	float m_fJump_Accel;
 	float m_fJumpSpeed;
+
 public:
 	bool m_bPunched;
 	bool m_bJumped;

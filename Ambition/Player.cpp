@@ -44,6 +44,9 @@ Player::Player()
 	m_AJumpPunch->Init(1, 2, this);
 	m_AJumpPunch->SetAnimEndWithFrame(1);
 	m_AJumpPunch->AddContinueFrame(L"Resource/Kyo/JumpPunch/", 4, 10);
+
+
+
 }
 
 Player::~Player()
@@ -75,6 +78,8 @@ void Player::Update(float deltaTime)
 	case State::MOVE:
 		if (InputSystem->GetKey('A') == KeyState::NONE)
 			m_State = State::STAND;
+
+	
 
 		if (InputSystem->GetKey('D') == KeyState::NONE)
 			m_State = State::STAND;
