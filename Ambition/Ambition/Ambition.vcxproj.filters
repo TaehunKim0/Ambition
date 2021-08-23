@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="App.h">
+      <Filter>Frame</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Frame</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Node</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectMgr.h">
+      <Filter>Node</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Node</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureMgr.h">
+      <Filter>Node</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Node</Filter>
+    </ClInclude>
+    <ClInclude Include="SMain.h">
+      <Filter>The Fighting\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GamDok.h">
+      <Filter>Frame</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Frame</Filter>
+    </ClInclude>
+    <ClInclude Include="AIController.h">
+      <Filter>The Fighting\Controll</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller.h">
+      <Filter>The Fighting\Controll</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerController.h">
+      <Filter>The Fighting\Controll</Filter>
+    </ClInclude>
+    <ClInclude Include="SteveFox.h">
+      <Filter>The Fighting\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Fighter.h">
+      <Filter>The Fighting\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="SIntro.h">
+      <Filter>The Fighting\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="STutorial.h">
+      <Filter>The Fighting\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SInDoor.h">
+      <Filter>The Fighting\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SOutDoor.h">
+      <Filter>The Fighting\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionMgr.h">
+      <Filter>The Fighting\Controll</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>Node</Filter>
+    </ClInclude>
+    <ClInclude Include="Characters.h">
+      <Filter>The Fighting\Controll</Filter>
+    </ClInclude>
+    <ClInclude Include="NamIl.h">
+      <Filter>The Fighting\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="FightMgr.h">
+      <Filter>The Fighting\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CharSelect.h">
+      <Filter>The Fighting\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Node</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandMgr.h">
+      <Filter>The Fighting\Controll</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeUI.h">
+      <Filter>The Fighting\Scene</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="Entry.cpp" />
+    <ClCompile Include="App.cpp">
+      <Filter>Frame</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Node</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectMgr.cpp">
+      <Filter>Node</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Node</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureMgr.cpp">
+      <Filter>Node</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Node</Filter>
+    </ClCompile>
+    <ClCompile Include="SMain.cpp">
+      <Filter>The Fighting\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GamDok.cpp">
+      <Filter>Frame</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Frame</Filter>
+    </ClCompile>
+    <ClCompile Include="AIController.cpp">
+      <Filter>The Fighting\Controll</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller.cpp">
+      <Filter>The Fighting\Controll</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerController.cpp">
+      <Filter>The Fighting\Controll</Filter>
+    </ClCompile>
+    <ClCompile Include="SteveFox.cpp">
+      <Filter>The Fighting\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Fighter.cpp">
+      <Filter>The Fighting\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>Node</Filter>
+    </ClCompile>
+    <ClCompile Include="SIntro.cpp">
+      <Filter>The Fighting\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="STutorial.cpp">
+      <Filter>The Fighting\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SInDoor.cpp">
+      <Filter>The Fighting\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SOutDoor.cpp">
+      <Filter>The Fighting\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionMgr.cpp">
+      <Filter>The Fighting\Controll</Filter>
+    </ClCompile>
+    <ClCompile Include="NamIl.cpp">
+      <Filter>The Fighting\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="FightMgr.cpp">
+      <Filter>The Fighting\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CharSelect.cpp">
+      <Filter>The Fighting\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Node</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandMgr.cpp">
+      <Filter>The Fighting\Controll</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeUI.cpp">
+      <Filter>The Fighting\Scene</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Frame">
+      <UniqueIdentifier>{23849e1b-e296-4249-8f1c-756847feec7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Node">
+      <UniqueIdentifier>{cf016ec9-95cd-4b64-a16d-d6b95aea7c11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="The Fighting">
+      <UniqueIdentifier>{11705864-d7dc-4ea5-b30e-b8fdc1916da8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="The Fighting\Scene">
+      <UniqueIdentifier>{d1e35cb3-cadb-4199-9912-13533ee1b347}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="The Fighting\Character">
+      <UniqueIdentifier>{7fea604d-1e13-4e8b-8621-70c4e70ab7d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="The Fighting\Controll">
+      <UniqueIdentifier>{ddff280b-7d16-4558-9e10-edd7507dbdbd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
